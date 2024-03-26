@@ -54,7 +54,7 @@ app.get("/", (req, res) => {
 
 // Ruta Genérica
 app.get("*", (req, res) => {
-  res.send("Esta página no existe");
+  res.send("<h1>Esta página No Existe</h1>");
 });
 
 app.listen(PORT, () => {
