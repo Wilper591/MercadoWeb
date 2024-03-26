@@ -1,0 +1,36 @@
+{{!-- Boton Trigger --}}
+<button
+  type="button"
+  class="btn btn-success text-white"
+  data-bs-toggle="modal"
+  data-bs-target="#modalProductos">
+  <i class="fa-solid fa-cart-shopping fs-1"></i>
+</button>
+
+{{!-- MODAL --}}
+<div
+  class="modal fade"
+  id="modalProductos"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body">
+        <h1 class="text-center">Productos agregados:</h1>
+        <div class="text-center" id="productosContainer"></div>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary text-white"
+          data-bs-dismiss="modal"
+        >
+          Cerrar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -3,10 +3,11 @@ const app = express();
 const PORT = 3000;
 const exphbs = require("express-handlebars");
 
-/* STATIC */
+/* Rutas estaticas */
 app.use(express.static(__dirname + "/public"));
 app.use("/css", express.static(__dirname + "/node_modules/bootstrap/dist/css"));
-app.use("/js", express.static(__dirname + "/node_modules/jquery/dist/"));
+app.use("/css", express.static(__dirname + "/node_modules/bootstrap/dist/js"));
+app.use("/js", express.static(__dirname + "/node_modules/jquery/dist"));
 
 //Handlebars
 app.engine(
@@ -16,15 +17,17 @@ app.engine(
     partialsDir: __dirname + "/views/components/",
   })
 );
-
 app.set("view engine", "handlebars");
 
-
+//Ruta principal
 app.get("/", (req, res) => {
   res.render("Dashboard", {
     layout: "Dashboard",
     productos: [
-      { nombre: "banana", img: "/assets/img/banana.png" },
+      {
+        nombre: "banana",
+        img: "/assets/img/banana.png",
+      },
       {
         nombre: "cebollas",
         img: "/assets/img/cebollas.png",
